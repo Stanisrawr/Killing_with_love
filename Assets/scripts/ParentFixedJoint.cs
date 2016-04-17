@@ -10,7 +10,10 @@ public class ParentFixedJoint: MonoBehaviour {
 	public Rigidbody rigidBodyAttachPoint;
 	public GameObject bulletHole;
 	FixedJoint fixedJoint;
-	bool toggle = false;
+	RaycastHit hit;
+	public float spinSpeed;
+	public float shrinkSpeed;
+
 	// Use this for initialization
 	void Awake () {
 		trackedObj = GetComponent <SteamVR_TrackedObject>();
@@ -28,34 +31,41 @@ public class ParentFixedJoint: MonoBehaviour {
 		}*/
 	}
 
+	void Update()
+	{
+		if (hit.collider.tag == "Enemy") {
+			hit.collider.gameObject.GetComponent<Renderer> ().material.color = Color.red;
+			hit.collider.gameObject.transform.Rotate (Vector3.up, spinSpeed * Time.deltaTime);
+			hit.collider.gameObject.transform.localScale -= Vector3.one * Time.deltaTime * shrinkSpeed;
+			//play smoke animation
+			if (hit.collider.gameObject.transform.localScale.y < 0.1f)
+				Destroy (hit.collider.gameObject);
+			//Spawn Happy Thing
+		}
+	}
+
+
 	void OnTriggerStay(Collider col)
 	{
 		Debug.Log("You have collided with "+col.name+" and activated OnTriggerStay");
 
 		if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger)) {
-			RaycastHit hit;
 			Ray ray = new Ray (transform.position, transform.forward);
-			if (Physics.Raycast (ray, out hit, 100f)) {
+			if (Physics.Raycast (ray, out hit, 1000f)) {
 
 				Instantiate (bulletHole, hit.point, Quaternion.FromToRotation (Vector3.up, hit.normal));
 			}
 		}
 
-		if (device.GetPress (SteamVR_Controller.ButtonMask.Touchpad)) {
-			if (toggle) {
-				toggle = false;
-			} else {
-				toggle = true;
-			}
-		}
 
 
-		if (fixedJoint == null && toggle) {
+	
+		if (fixedJoint == null && device.GetPress(SteamVR_Controller.ButtonMask.Touchpad)) {
 			col.transform.position = gameObject.transform.position;
 			col.transform.rotation = gameObject.transform.rotation;
 			fixedJoint = col.gameObject.AddComponent<FixedJoint>();
 			fixedJoint.connectedBody = rigidBodyAttachPoint;
-		} else if(fixedJoint!=null &&toggle==false){
+		} else if(fixedJoint!=null &&device.GetPress(SteamVR_Controller.ButtonMask.Touchpad)){
 			GameObject go = fixedJoint.gameObject;
 			Rigidbody rigidBody = go.GetComponent<Rigidbody> ();
 			Object.Destroy(fixedJoint);
