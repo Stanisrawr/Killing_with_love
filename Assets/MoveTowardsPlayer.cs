@@ -5,6 +5,7 @@ public class MoveTowardsPlayer : MonoBehaviour {
 
 	public float speed;
 	public Animator anim;
+	public GameObject player;
 	// Use this for initialization
 	void Start () {
 		anim = gameObject.GetComponent<Animator> ();
@@ -14,8 +15,8 @@ public class MoveTowardsPlayer : MonoBehaviour {
 	void Update () {
 
 		float step = speed * Time.deltaTime;
-		transform.position = Vector3.MoveTowards (transform.position,Camera.main.transform.position,step);
-		if (transform.position==Camera.main.transform.position){
+		transform.position = Vector3.MoveTowards (transform.position,player.transform.position,step);
+		if (transform.position==player.transform.position){
 			print("got there");
 			GameObject.DestroyObject (gameObject);
 		}

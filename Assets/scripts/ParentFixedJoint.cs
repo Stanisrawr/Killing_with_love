@@ -33,6 +33,7 @@ public class ParentFixedJoint: MonoBehaviour {
 
 	void Update()
 	{
+		
 		if (hit.collider.tag == "Enemy") {
 			hit.collider.gameObject.GetComponent<Renderer> ().material.color = Color.red;
 			hit.collider.gameObject.transform.Rotate (Vector3.up, spinSpeed * Time.deltaTime);
@@ -52,7 +53,6 @@ public class ParentFixedJoint: MonoBehaviour {
 		if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger)) {
 			Ray ray = new Ray (transform.position, transform.forward);
 			if (Physics.Raycast (ray, out hit, 1000f)) {
-
 				Instantiate (bulletHole, hit.point, Quaternion.FromToRotation (Vector3.up, hit.normal));
 			}
 		}
@@ -60,7 +60,7 @@ public class ParentFixedJoint: MonoBehaviour {
 
 
 	
-		if (fixedJoint == null && device.GetPress(SteamVR_Controller.ButtonMask.Touchpad)) {
+		if (fixedJoint == null && device.GetPress(SteamVR_Controller.ButtonMask.Touchpad) &&col.tag == "Weapon") {
 			col.transform.position = gameObject.transform.position;
 			col.transform.rotation = gameObject.transform.rotation;
 			fixedJoint = col.gameObject.AddComponent<FixedJoint>();

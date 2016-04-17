@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Disappear.cs" />
      <Compile Include="Assets\EnemyCollision.cs" />
      <Compile Include="Assets\MoveTowardsPlayer.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />

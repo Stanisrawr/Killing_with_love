@@ -9,19 +9,8 @@ labels:
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Clip
-    100004: SMG
-    400000: //RootNode
-    400002: Clip
-    400004: SMG
-    2300000: Clip
-    2300002: SMG
-    3300000: Clip
-    3300002: SMG
     4300000: Clip
     4300002: SMG
-    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 3
