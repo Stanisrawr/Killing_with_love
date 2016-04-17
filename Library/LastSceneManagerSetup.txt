@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/scenes/KillingWithRove.unity
+  isLoaded: 1
+  isActive: 1
