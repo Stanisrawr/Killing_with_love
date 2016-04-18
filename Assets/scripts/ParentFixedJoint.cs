@@ -13,6 +13,12 @@ public class ParentFixedJoint: MonoBehaviour {
 	RaycastHit hit;
 	public float spinSpeed;
 	public float shrinkSpeed;
+	public AudioSource audioP;
+	public GameObject[] kawaii;
+	public AudioClip pew;
+	public AudioClip[] motivation;
+	bool toggle=false;
+
 
 	// Use this for initialization
 	void Awake () {
@@ -33,7 +39,7 @@ public class ParentFixedJoint: MonoBehaviour {
 
 	void Update()
 	{
-		
+		/*
 		if (hit.collider.tag == "Enemy") {
 			hit.collider.gameObject.GetComponent<Renderer> ().material.color = Color.red;
 			hit.collider.gameObject.transform.Rotate (Vector3.up, spinSpeed * Time.deltaTime);
@@ -42,7 +48,7 @@ public class ParentFixedJoint: MonoBehaviour {
 			if (hit.collider.gameObject.transform.localScale.y < 0.1f)
 				Destroy (hit.collider.gameObject);
 			//Spawn Happy Thing
-		}
+		}*/
 	}
 
 
@@ -50,28 +56,46 @@ public class ParentFixedJoint: MonoBehaviour {
 	{
 		Debug.Log("You have collided with "+col.name+" and activated OnTriggerStay");
 
-		if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger)) {
-			Ray ray = new Ray (transform.position, transform.forward);
-			if (Physics.Raycast (ray, out hit, 1000f)) {
-				Instantiate (bulletHole, hit.point, Quaternion.FromToRotation (Vector3.up, hit.normal));
-			}
+		if (toggle == true) {
+			toggle = false;
+		} else {
+			toggle = true;
 		}
-
-
-
 	
-		if (fixedJoint == null && device.GetPress(SteamVR_Controller.ButtonMask.Touchpad) &&col.tag == "Weapon") {
+		if (fixedJoint == null && toggle &&col.tag == "Weapon") {
 			col.transform.position = gameObject.transform.position;
 			col.transform.rotation = gameObject.transform.rotation;
 			fixedJoint = col.gameObject.AddComponent<FixedJoint>();
 			fixedJoint.connectedBody = rigidBodyAttachPoint;
-		} else if(fixedJoint!=null &&device.GetPress(SteamVR_Controller.ButtonMask.Touchpad)){
+		} else if(fixedJoint!=null &&toggle==false){
 			GameObject go = fixedJoint.gameObject;
 			Rigidbody rigidBody = go.GetComponent<Rigidbody> ();
 			Object.Destroy(fixedJoint);
 			fixedJoint = null;
 			tossObject (rigidBody);
 		}
+
+		if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger)) {
+			Ray ray = new Ray (transform.position, transform.forward);
+			audioP.clip = pew;
+			audioP.Play();
+			if (Physics.Raycast (ray, out hit, 1000f)) {
+				if (hit.collider.tag == "Enemy") {
+					int i = Random.Range (0, 5);
+					Instantiate (kawaii[i],hit.point, Quaternion.identity);
+					Destroy (hit.collider.gameObject);
+					int j=Random.Range(0,19);
+					audioP.clip = motivation[j];
+					audioP.Play();
+				}
+
+
+				Instantiate (bulletHole, hit.point, Quaternion.FromToRotation (Vector3.up, hit.normal));
+
+			}
+
+		}
+
 	}
 
 	void tossObject(Rigidbody rigidBody){
