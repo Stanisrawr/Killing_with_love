@@ -1,23 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
+/*
 public class Shooty : MonoBehaviour {
-
-	SteamVR_TrackedObject trackedObj;
-	SteamVR_Controller.Device device;
 
 	// Use this for initialization
 	void Start () {
 
 	}
-	object CLONE;
+
 	public GameObject bulletHole;
 	// Update is called once per frame
 	void Update () 
 	{		
-		device = SteamVR_Controller.Input((int)trackedObj.index);
-
+		//device = 
 		if (device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger))
 
 			{
@@ -38,7 +34,7 @@ public class Shooty : MonoBehaviour {
 }
 
 
-
+*/
 	
 					
 
