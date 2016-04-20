@@ -20,3 +20,6 @@ C:\Users\andres\Documents\GitHub\Killing_with_love\Temp\bin\Debug\UnityEngine.Ne
 C:\Users\andres\Documents\GitHub\Killing_with_love\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\andres\Documents\GitHub\Killing_with_love\obj\Debug\Assembly-CSharp.dll
 C:\Users\andres\Documents\GitHub\Killing_with_love\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Home\Documents\GitHub\Killing_with_love\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Home\Documents\GitHub\Killing_with_love\obj\Debug\Assembly-CSharp.dll
+C:\Users\Home\Documents\GitHub\Killing_with_love\obj\Debug\Assembly-CSharp.pdb
