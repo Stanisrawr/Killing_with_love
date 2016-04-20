@@ -11,6 +11,7 @@ public class Shooty : MonoBehaviour {
 
 	public GameObject bulletHole;
 	public AudioSource audioP;
+	public AudioSource audioQ;
 	public GameObject[] kawaii;
 	public AudioClip pew;
 	public AudioClip[] motivation;
@@ -57,8 +58,8 @@ public class Shooty : MonoBehaviour {
 					Instantiate (kawaii[k],hit.point, Quaternion.identity);
 					Destroy (hit.collider.gameObject);
 					int j=Random.Range(0,19);
-					audioP.clip = motivation[j];
-					audioP.Play();
+					audioQ.clip = motivation[j];
+					audioQ.Play();
 				}
 
 
