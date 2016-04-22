@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class EnemyCollision : MonoBehaviour {
@@ -6,7 +7,7 @@ public class EnemyCollision : MonoBehaviour {
 	public AudioClip background;
 	public AudioClip gameover;
 	public GameObject plane;
-
+	bool dead=false;
 	void OnTriggerStay (Collider col) {
 		if (col.tag == "Enemy") {
 			AudioSource audio = GetComponent<AudioSource> ();
@@ -18,9 +19,23 @@ public class EnemyCollision : MonoBehaviour {
 				Destroy (gameObjects[i]);
 			}
 
+			//dead=true;
+			DEAD();
 
 		}
 			
 		//GAME OVER
 	}
+
+
+
+	void DEAD()
+	{
+		//if (a == true) {
+			//yield return new WaitForSeconds (14.0f);
+			SceneManager.LoadScene ("Game OVer",LoadSceneMode.Single);
+		//}
+	}
+
+
 }

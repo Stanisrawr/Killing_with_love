@@ -7,8 +7,6 @@ Project("{8AC2758C-1FE7-C61A-A6A2-B9165ADBE177}") = "Killing_with_love", "Assemb
 EndProject
 Project("{8AC2758C-1FE7-C61A-A6A2-B9165ADBE177}") = "Killing_with_love", "Assembly-CSharp-Editor.csproj", "{C480ECBF-5779-45C2-A872-6F987A00AAF5}"
 EndProject
-Project("{8AC2758C-1FE7-C61A-A6A2-B9165ADBE177}") = "Killing_with_love", "Assembly-UnityScript.unityproj", "{36D4280E-4A03-495F-E81A-30D7FD329746}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,10 +25,6 @@ Global
 		{C480ECBF-5779-45C2-A872-6F987A00AAF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C480ECBF-5779-45C2-A872-6F987A00AAF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C480ECBF-5779-45C2-A872-6F987A00AAF5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{36D4280E-4A03-495F-E81A-30D7FD329746}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{36D4280E-4A03-495F-E81A-30D7FD329746}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{36D4280E-4A03-495F-E81A-30D7FD329746}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{36D4280E-4A03-495F-E81A-30D7FD329746}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
