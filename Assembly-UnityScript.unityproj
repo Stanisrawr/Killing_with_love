@@ -45,21 +45,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Cartoon SMG\Spin Dat.js" />
+     <Compile Include="Assets\Downloaded Assests\Cartoon SMG\Spin Dat.js" />
      <None Include="Assets\Cardboard\Distortion\CardboardDistortion.cginc" />
      <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_BlitFlip.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_ClearAll.shader" />
-     <None Include="Assets\A_piece_of_nature\Readme.txt" />
+     <None Include="Assets\Downloaded Assests\A_piece_of_nature\Readme.txt" />
      <None Include="Assets\Cardboard\Resources\UnlitTexture.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_HiddenArea.shader" />
-     <None Include="Assets\PB_Spider\readme.txt" />
+     <None Include="Assets\Downloaded Assests\PB_Spider\readme.txt" />
      <None Include="Assets\SteamVR\Resources\SteamVR_Overlay.shader" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
-     <None Include="Assets\dpt_zippermouth\chr\Materials\T_double.shader" />
+     <None Include="Assets\Downloaded Assests\dpt_zippermouth\chr\Materials\T_double.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_Blit.shader" />
      <None Include="Assets\Cardboard\Resources\UI\CardboardReticleShader.shader" />
-     <None Include="Assets\Horse\SoftAlpha.shader" />
+     <None Include="Assets\Downloaded Assests\Horse\SoftAlpha.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_AlphaOut.shader" />
      <None Include="Assets\SteamVR\readme.txt" />
      <None Include="Assets\SteamVR\Resources\SteamVR_ColorOut.shader" />
